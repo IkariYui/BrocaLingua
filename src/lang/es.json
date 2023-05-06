@@ -1,0 +1,77 @@
+{
+    "navbar":{
+        "about":"Quienes somos",
+        "services":"Servicios",
+        "languages":"Idiomas"
+      },
+
+      "about":{
+        "tittle":"Sobre nosotros",
+        "info1":"Un equipo altamente capacitado, calificado y preparado para realizar traducciones oficiales de apostillas avaladas por la Cancillería, transcripciones especializadas, interpretación simultánea y consecutiva, garantizando la calidad en el servicio. Nuestro objetivo principal es ofrecer un acompañamiento ágil, eficaz y comprometido con sus necesidades. Es por esto que ponemos a su disposición, personal capaz de responder o asesorar de manera eficiente, sus requerimientos. ",
+        "info2":"⦁Traducimos sus documentos de manera ágil y efectiva. ⦁Traducción especializada y simultánea con personal calificado. ⦁Realizamos traducciones oficiales con precios accesibles. ⦁Calidad garantizada en cada traducción."
+      },
+      "values":{
+        "tittle":"Valores",
+        "text1":"⦁Puntualidad: Al momento de crear y pensar los proyectos de nuestros clientes, con el fin de cumplir con sus tiempos y expectativas. ",
+        "text2":"⦁Excelencia: Para entregar lo mejor en cada intención y dejar lo mejor de nosotros en cada una, buscando que el cliente final siempre se quede o vuelva a buscarnos. ",
+        "text3":"⦁Pasión: Al momento de crear e inyectar toda la energía en cada uno de nuestros proyectos.",
+        "text4":"⦁Lealtad: Con nuestro equipo y clientes, garantizando en cada uno de sus proyectos total profesionalismo y confidencialidad "
+      },
+      "services":{
+        "tittle":"Servicios",
+        "subtittle":"Todos los servicios que ofrecemos:",
+        "text":"Somos un equipo de traductores e intérpretes altamente capacitados, calificados y con experiencia, que garantizan la calidad de nuestros servicios desde y hacia cualquier idioma.Traducción de contenidos académicos, aduaneros, generales y especializados, certificaciones oficiales, médicas, jurídicas, contables, universitarias, financieras y de instituciones acreditadas, blogs, artículos, etc. También servicios de interpretación, consecutiva (presencial), consecutiva (llamada telefónica), consecutiva (video llamada), simultánea, entre otros.",
+        "text2":"Nuestros empleados, traductores e intérpretes firman acuerdos de confidencialidad y se comprometen a mantener la privacidad de toda su información. Al recibir un proyecto nuevo, nuestro personal administrativo, equipo de traductores y/o intérpretes, quiénes están altamente capacitados y calificados, firman acuerdos de confidencialidad con el fin de salva guardar la información que se recibe.",
+        "tiservice-tittle":"Agencia de traducción e interpretación",
+        "tiservice-text1":"Como premisa, brindamos un acompañamiento personalizado acorde a sus necesidades. Nuestro servicio es eficaz y ágil. Además, nuestro personal comprometido está capacitado y calificado para asesorar y atender de manera inmediata sus requerimientos.",
+        "tiservice-text2":"Contamos con traductores certificados, por lo que nuestro servicio no solo garantiza la vigencia y comprensión del documento original, sino también, la exactitud del contenido y la tranquilidad de saber que el trámite fue realizado por personal calificado y certificado.",
+        "todservice-tittle":"Traducción de documentos: ",
+        "todservice-text":"Somos lingüistas expertos con gran trayectoria en traducción de contenido general, especializado y certificado.",
+        "slservice-tittle":"Servicio de localización: ",
+        "slservice-text":"Adecuación de textos traducidos por profesionales no nativos, adaptación de textos para otros mercados con regionalismos y características propias de su territorio.",
+        "ftservice-tittle":"Traducción financiera: ",
+        "ftservice-text":"Realizamos de manera segura y pertinente; interpretación de libros contables, numéricos y gráficos, con el fin de pasar la información a al idioma deseado, igual a cómo se tiene, en el inicial.",
+        "tsfgaservice-tittle":"Servicio de Traducción para Organismos Gubernamentales: ",
+        "tsfgaservice-text":"Garantizamos confidencialidad y perfecta traducción, si se requiere certificada, para documentos oficiales que requieran de cuidado y especial atención, asegurando absoluta reserva en cada uno de los datos allí registrados."
+      },
+      "languages":{
+        "language-tittle":"Idiomas",
+        "language-text":"Contamos con una amplia red de traductores e intérpretes capacitados para traducir en más de 100 idiomas de destino. Nos caracterizamos por ser económicos y muy confiables. Además, altamente calificados y preparados para responder con agilidad a cada una de sus necesidades. ",
+        "english":"Inglés",
+        "english-description":"Nuestro contenido es preciso. Plasma en cada palabra, la diversidad de un vocabulario amplio que busca conservar su coherencia y significado.",
+        "spanish":"Español",
+        "spanish-description":"Realizamos contenido exacto que busca comunicar de manera precisa el mensaje.",
+        "german":"Alemán",
+        "german-description":"El requerimiento es atendido por personas nativas de dicho país con el fin de conservar la información de origen.",
+        "swedish":"Sueco",
+        "swedish-description":"Se realiza la traducción desde el idioma inglés o español, se garantiza la precisión en cada una de sus palabras.",
+        "french":"Francés",
+        "french-description":"Se traduce de manera precisa acorde a la percepción que se tenga del texto.",
+        "japanese":"Japonés",
+        "japanese-description":"Ofrecemos traducción profesional y de alta calidad a este idioma."
+      },
+      "contact":{
+        "tittle":"Contacto",
+        "text":"Con el fin de garantizar la satisfacción del cliente y la eficiencia en nuestra asesoría, contamos con un gran equipo de traductores preparados y altamente calificados para brindar el mejor servicio. Lo invitamos a dejarnos sus datos y/o escribir al correo: info@brocalingua.com para solicitar más información.",
+        "button":"Enviar",
+        "placeholder":"tucorreo@gmail.com",
+        "advertisement":"Nuestros empleados, traductores e intérpretes firman acuerdos de confidencialidad y se comprometen a mantener la privacidad de todos sus datos."
+      },
+
+      "termsandconditions":{
+        "tittle":"POLÍTICA DE TRATAMIENTOS DE DATOS BROCA GROUP",
+        "text1":"Broca Group SAS con domicilio en Medellín, identificada con NIT 901472679 quienes en adelante se denominará la “Compañía”, es el responsable del tratamiento de los datos personales que se pueda llegar a obtener de usted.  Usted podrá ejercer sus derechos a conocer, actualizar, rectificar sus datos personales, hacer consultas sobre el tratamiento aplicado, solicitar prueba de la autorización otorgada, hacer reclamos directamente a la Compañía y/o al encargado y subsidiariamente ante la Superintendencia de Industria y Comercio, revocar la autorización otorgada y solicitar la eliminación parcial o total de sus datos personales, a través de estos medios:",
+        "text2":"Dirección oficina: Cir 74 A 76 E 20 AP 502 Ed Zamanes",
+        "text3":"Correo electrónico: info@brocagroup.com.",
+        "text4":"Teléfono:300 203 19 88.",
+        "text5":"Sus datos personales serán incluidos en una base de datos y serán utilizados para los siguientes fines:",
+        "text6":"Contacto para propuestas de venta, comercialización y adquisición",
+        "text7":"Invitación a eventos y convenciones relacionados con la medicina y afines",
+        "text8":"Envío de publicidad y promociones personalizadas y boletines informativos"
+      },
+
+      "footer":{
+        "termsandconditions":"Terms & Conditions",
+        "privacy":"Privacy policy"
+      }
+}

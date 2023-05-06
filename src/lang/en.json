@@ -1,0 +1,82 @@
+{
+    "navbar":{
+        "about":"About us",
+        "services":"Our services",
+        "languages":"Languages"
+      },
+
+      "about":{
+        "tittle":"About us",
+        "info1":"We are a team of highly trained, qualified, and experienced translators and interpreters, who guarantee the quality of our services. Our main objective is to provide responsible, fast, and efficient support for your needs. That is why we make available to you, staff able to efficiently address and/or assist on any need you have.",
+        "info2":"⦁We translate your documents promptly and accurately. ⦁Qualified personnel. ⦁We provide official translations at affordable prices. ⦁Guaranteed quality in every translation. ⦁Our employees, translators and interpreters sign confidentiality agreements and are committed to maintaining the privacy of all your data."
+      },
+
+      "values":{
+        "tittle":"Values",
+        "text1":"⦁ Timeliness: When creating and designing our clients' projects, to meet their deadlines and expectations.",
+        "text2":"⦁ Excellence: To provide the best of quality in every task and give the best of us in each one of them, so that the final client remains or comes back to us again.",
+        "text3":"⦁ Passion: When creating and injecting all the energy in each of our projects.",
+        "text4":"⦁ Loyalty: With our team and clients, guaranteeing total professionalism and confidentiality for each of our projects."
+      },
+
+      "services":{
+        "tittle":"Services",
+        "subtittle":"All the services we offer:",
+        "text":"We are a team of highly trained, qualified and experienced translators and interpreters, who guarantee the quality of our services from and into any language.Translation of academic, customs, general and specialized contents, official certifications, medical, legal, accounting, university, financial and accredited institutions, blogs, articles, etc.Also interpreting services, consecutive (face-to-face), consecutive (telephone call), consecutive (video call), simultaneous, among others.",
+        "text2":"Our employees, translators and interpreters sign confidentiality agreements and are committed to maintaining the privacy of all your information. Upon receiving a new project, our highly trained and qualified administrative staff, team of translators and/or interpreters sign confidentiality agreements in order to safeguard the information received.",
+        "tiservice-tittle":"Translation and interpretation agency",
+        "tiservice-text1":"As a premise, we provide rsonalized assistance according to your needs. Our service is streamlined and efficient. In addition, our committed staff is trained and qualified to provide immediate advice and meet your requirements.",
+        "tiservice-text2":"Our translators are certified, which means that our service not only guarantees the validity and comprehension of the original document, but also the accuracy of the content and the peace of mind of knowing that the procedure was carried out by qualified and certified personnel.",
+        "todservice-tittle":"Translation of documents: ",
+        "todservice-text":"We are expert linguists with extensive experience in translation of general, specialized and certified content.",
+        "slservice-tittle":"Localization service: ",
+        "slservice-text":"Adaptation of texts translated by non-native professionals, adaptation of texts for other markets with regionalisms and particular characteristics of their territory.",
+        "ftservice-tittle":"Financial translation: ",
+        "ftservice-text":"We interpret accounting and numerical and charts in a reliable and accurate manner, to translate the information into the desired language, just as it is in the original language.",
+        "tsfgaservice-tittle":"Translation Service for Government Agencies: ",
+        "tsfgaservice-text":"We guarantee confidentiality and flawless translations, including certified translations, if needed, of official documents that require special care and attention, ensuring absolute confidentiality for every piece of information recorded therein."
+      },
+
+      "languages":{
+        "language-tittle":"Languages",
+        "language-text":"Languages: We have a wide network of translators and interpreters trained to translate into more than 100 target languages. We are known for being cost-effective and very reliable. In addition, we are highly qualified and prepared to promptly address each of your needs.",
+        "english":"English",
+        "english-description":"Our content is accurate. It reflects in each word, the diversity of a wide vocabulary that seeks to preserve its coherence and meaning.",
+        "spanish":"Spanish",
+        "spanish-description":"We deliver accurate content that aims to communicate the message with precision.",
+        "german":"German",
+        "german-description":"The request is handled by native German speakers in order to preserve the source information.",
+        "swedish":"Swedish",
+        "swedish-description":"The translation is done from English or Spanish, guaranteeing the accuracy of each of its words.",
+        "french":"French",
+        "french-description":"We translate accurately according to the perception of the text.",
+        "japanese":"Japanese",
+        "japanese-description":"We offer professional and high quality translation into this language."
+      },
+
+
+      "contact":{
+        "tittle":"Contact",
+        "text":"In order to guarantee customer satisfaction and efficiency in our consulting services, we have a great team of highly qualified and trained translators to provide excellent service. You are welcome to leave us your contact information and/or write to us at: info@brocalingua.com to request more information.",
+        "button":"Submit",
+        "placeholder":"yourmail@gmail.com",
+        "advertisement":"Our employees, translators and interpreters sign confidentiality agreements and are committed to maintaining the privacy of all your information. "
+      },
+
+      "termsandconditions":{
+        "tittle":"BROCA GROUP DATA PROCESSING POLICY",
+        "text1":"Broca Group SAS with address in Medellin, identified with TIN 901472679 hereinafter referred to as the “Company”, is responsible for the processing of personal data that may be obtained from you. You may exercise your rights to know, update, and rectify your personal data, make inquiries about the applicable process, request proof of the authorization granted, file claims directly to the Company and/or the person in charge and alternatively before the Superintendence of Industry and Commerce, revoke the authorization granted and request the partial or complete deletion of your personal data through these means:",
+        "text2":" Business address: Cir 74 A 76 E 20 AP 502 Ed Zamanes.",
+        "text3":"Email: info@brocagroup.com",
+        "text4":"Telephone: 300 203 19 88",
+        "text5":"Your personal data will be included in a database and used for the following purposes:",
+        "text6":"Contact for sales, marketing, and acquisition proposals ",
+        "text7":"Invitation to events and conventions related to medicine and related",
+        "text8":"Sending advertising and personalized promotions and newsletters"
+      },
+
+      "footer":{
+        "termsandconditions":"Terms & Conditions",
+        "privacy":"Privacy policy"
+      }
+}
