@@ -4,9 +4,10 @@
   box-sizing: border-box;
   font-family: "Reem Kufi", sans-serif !important;
 }
-img {
-  max-width: 100%;
-  height: auto;
+
+.logo{
+  width: 100%;
+  height: 100%;
 }
 
 .banner-img{
@@ -19,12 +20,12 @@ img {
 
 .App {
   min-height: 100vh;
-  width: 90vw;
+  width: 100vw;
   max-width: 100vw;
-  margin: 0rem auto;
+  margin: 0rem auto;  
 }
 body {
-  max-width: 100%;
+  max-width: 95%;
   overflow-x: hidden;
 }
 
@@ -33,6 +34,7 @@ body {
 }
 
 nav {
+  padding: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -40,9 +42,29 @@ nav {
   background-color: #f6f6f6;
   position: fixed;
   z-index:3;
-  width: 86%;
+  width: 100%
 }
+.langbt-container{
+  margin-left: 1rem;
+}
+.nav-logo-container{
 
+  width: 400px;
+  height: 90px;
+}
+.footer-logo{
+  width: 30%;
+}
+.languageButtons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5px;
+  height: 5px;
+}
+.TFnav{
+  margin-bottom: 5rem;
+}
 
 
 .navbar-menu-container {
@@ -54,15 +76,59 @@ nav {
   text-decoration: none;
   color: black;
   font-size: 1rem;
-  font-weight: 600;
-  
+  font-weight: 500;
+  margin-top: 0.5rem;
 }
+.navbar-links-container  {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  padding: 1rem;
+}
+.dropdown-container  {
+  
+  padding: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+.dd{
+  background: #000000 !important;
+
+}
+
+.footerGrid{
+  display: grid;
+  padding: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.grid1{
+  grid-column: 2 / 4  ;
+  grid-row: 1;
+}
+.grid2{
+  grid-column: 2 / 3;
+  grid-row: 1;
+}
+
+
 .buttonlinks{
   text-decoration: none;
+  
 }
+
+.faq{
+  font-weight: bold;
+}
+
 .primary-button {
-  padding: 0.9rem 1.75rem;
-  background-color: #727276;
+  padding: 0.8rem ;
+  background-color: #E6E6E6;
   outline: none;
   border: none;
   border-radius: 5rem;
@@ -73,6 +139,7 @@ nav {
 }
 .navbar-cart-icon {
   font-size: 1.15rem;
+  
 }
 .primary-button:hover {
   background-color: rgb(234, 234, 234);
@@ -80,13 +147,17 @@ nav {
 .navbar-menu-container svg {
   font-size: 1.5rem;
   cursor: pointer;
+  
 }
 .home-banner-container {
   position: relative;
   display: flex;
   padding-top: 3rem;
+  margin-left:2rem ;
+  margin-right: 2rem;
   
 }
+
 
 .home-bannerImage-container {
   position: absolute;
@@ -111,14 +182,14 @@ nav {
 }
 .primary-heading {
   font-size: clamp(2rem, 5vw, 4rem);
-  color: #4c4c4c;
+  color: #000000;
   /* line-height: 5rem; */
   max-width: 600px;
 }
 .primary-text {
   font-size: clamp(1rem, 3vw, 1.1rem);
   max-width: 500px;
-  color: #6a6a6a;
+  color: #000000;
   margin: 1.5rem 0rem;
 }
 .secondary-button {
@@ -192,7 +263,7 @@ nav {
   font-size: 1.1rem;
   cursor: pointer;
   font-weight: 600;
-  color: #484848;
+  color: #000000;
   transition: 0.2s;
   display: flex;
   align-items: center;
@@ -266,10 +337,19 @@ nav {
 }
 .contact-advertisement{
   margin-top: 2rem;
+  
+}
+.contact-text{
+  font-size: 13px;
+  text-align-last: center;
+  padding: 1rem;
 }
 .termsandconditions{
-  margin-top: 5rem;
+  margin-top: 8rem;
   text-align: center;
+}
+.terms-text{
+ padding: 2rem;
 }
 .footer-wrapper {
   margin: 6rem 0rem;
@@ -360,6 +440,7 @@ nav {
 }
 .work-section-wrapper {
   margin-top: 5rem;
+
 }
 .work-section-top p {
   text-align: center;
@@ -373,11 +454,12 @@ nav {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  
 }
 .work-section-info {
   width: 270px;
   min-height: 400px;
-  background-color: #87A1AB;
+  background-color: #E6E6E6;
   padding: 1rem 0.5rem;
   display: flex;
   flex-direction: column;
@@ -385,7 +467,7 @@ nav {
   align-items: center;
   text-align: center;
   border-radius: 1rem;
-  color: #505050;
+  color: #000000;
   margin: 0.5rem 0.5rem;
 }
 .work-section-info h4 {
@@ -406,7 +488,7 @@ nav {
 .lang-section-info {
   width: 270px;
   min-height: 400px;
-  background-color: #435d67;
+  background-color: #E6E6E6;
   padding: 1rem 0.1rem;
   display: flex;
   flex-direction: column;
@@ -416,7 +498,7 @@ nav {
   border-radius: 1rem;
   color: #000000;
   margin:0.5rem;
-  filter: blur(0.5px);
+  filter: blur(0.2px);
 }
 .lang-section-bottom {
   margin-top: 2rem;
@@ -426,6 +508,7 @@ nav {
   flex-wrap: wrap;
   
 }
+
 
 .work-section-info p {
   flex: 1;
@@ -448,7 +531,8 @@ nav {
 }
 @media (max-width: 800px) {
   .nav-logo-container {
-    max-width: 140px;
+    max-width: 200px;
+
   }
   .navbar-links-container {
     display: none;
@@ -479,7 +563,7 @@ nav {
   }
   .primary-text {
     text-align: center;
-    max-width: 80%;
+    max-width: 90%;
   }
   .home-text-section,
   .about-section-text-container {
@@ -544,7 +628,7 @@ nav {
     margin: 1rem 0rem;
   }
   .App {
-    max-width: 95vw;
+    max-width: 100vw;
   }
 }
 @media (max-width: 600px) {

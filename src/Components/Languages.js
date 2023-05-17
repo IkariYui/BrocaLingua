@@ -3,7 +3,7 @@ import ProfilePic from "../Assets/john-doe-image.png";
 
 import { useTranslation } from 'react-i18next';
 
-const Testimonial = () => {
+const Languages = () => {
   const { t,  i18n } = useTranslation();
   return (
     <div className="work-section-wrapper" id="languages">
@@ -52,4 +52,4 @@ const Testimonial = () => {
   );
 };
 
-export default Testimonial;
+export default Languages;

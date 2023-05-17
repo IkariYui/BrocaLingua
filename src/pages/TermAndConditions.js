@@ -12,17 +12,17 @@ const TermsAndConditions = () => {
         <Navbar />
     <div >
       <br></br> <br></br> 
-      <h1 className='termsandconditions'>{t("termsandconditions.tittle")}</h1>
-      <div >
-      <br></br> <br></br>   
-      <p>{t("termsandconditions.text1")}</p> <br></br> <br></br> 
-      <p>{t("termsandconditions.text2")}</p> <br></br>
-      <p>{t("termsandconditions.text3")}.</p><br></br>
-      <p>{t("termsandconditions.text4")}.</p><br></br><br></br>
-      <p>{t("termsandconditions.text5")}.</p> 
-      <p>{t("termsandconditions.text6")}.</p>
-      <p>{t("termsandconditions.text7")}.</p>
-      <p>{t("termsandconditions.text8")}.</p>
+        <h1 className='termsandconditions'>{t("termsandconditions.tittle")}</h1>
+      <div className='terms-text' >
+        <br></br> <br></br>   
+        <p>{t("termsandconditions.text1")}</p> <br></br> <br></br> 
+        <p>{t("termsandconditions.text2")}</p> <br></br>
+        <p>{t("termsandconditions.text3")}</p><br></br>
+        <p>{t("termsandconditions.text4")}</p><br></br><br></br>
+        <p>{t("termsandconditions.text5")}</p> 
+        <p>{t("termsandconditions.text6")}</p>
+        <p>{t("termsandconditions.text7")}</p>
+        <p>{t("termsandconditions.text8")}</p>
 
       <div className="contact-advertisement">
         <p>

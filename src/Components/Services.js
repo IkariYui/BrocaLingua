@@ -29,7 +29,7 @@ const generateWorkInfoData = (t) => [
   },
 ];
 
-const Work = () => {
+const Services = () => {
   const { t, i18n } = useTranslation();
   const [workInfoData, setWorkInfoData] = useState(generateWorkInfoData(t));
 
@@ -50,13 +50,9 @@ const Work = () => {
           </div>
         ))}
       </div>
-      <div className="about-buttons-container">
-        <Link to="/" className="buttonlinks">
-          <button className="secondary-button">Need help?</button>
-        </Link>
-      </div>
+
     </div>
   );
 };
 
-export default Work;
+export default Services;

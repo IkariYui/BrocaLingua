@@ -7,10 +7,6 @@ const Contact = () => {
     <div className="contact-page-wrapper">
       <h1 className="primary-heading">{t("contact.tittle")}</h1>
       <p className="primary-text">{t("contact.text")}</p>
-      <div className="contact-form-container">
-        <input type="text" placeholder={t("contact.placeholder")} />
-        <button className="secondary-button">{t("contact.button")}</button>
-      </div>
       <div className="contact-advertisement">
         <p>
         {t("contact.advertisement")}
