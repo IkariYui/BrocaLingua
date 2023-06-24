@@ -249,11 +249,7 @@ const db = getFirestore(app);
     </Stack>
             
   </Flex>
-            <Stack align={'center'}>
-              <Text mt={2}  fontSize={'1xl'} textAlign={'center'}>
-                 {t("contact.advertisement")}
-              </Text>  
-            </Stack>
+            
   </form>
   <Footer /> 
   </>

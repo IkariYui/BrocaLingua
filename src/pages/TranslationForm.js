@@ -25,11 +25,15 @@ import ReCAPTCHA from 'react-google-recaptcha';
   import Footer from "../Components/Footer"; 
   import { toast, ToastContainer } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
-
+  import 'firebase/storage';
+  import { getStorage } from 'firebase/storage';
   import { FirebaseApp } from 'firebase/app';
+  import { useEffect } from 'react';
+  import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
   import {app} from '../credentials';
   import {getFirestore, collection, addDoc, getDocs, doc,
           deleteDoc, getDoc, setDoc,} from 'firebase/firestore';
+     
 
 const db = getFirestore(app);
 
@@ -51,6 +55,13 @@ const TranslationForm = () =>{
 
     const [info, setInfo] = useState(initialData);
     const [isVerified, setIsVerified] = useState(false);
+    const [selectedFile, setSelectedFile] = useState(null);
+    const storage = getStorage();
+
+    const handleFileChange = (event) => {
+        const file = event.target.files[0];
+        setSelectedFile(file);
+    };
 
     
     const handleInputs = (e)   => {
@@ -59,27 +70,47 @@ const TranslationForm = () =>{
     };
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if(isVerified){
-            try {
-                await addDoc(collection(db,'translationForms'),{
-                    ...info
-                })
-            } catch (error) {
+        if (isVerified) {
+          try {
+            const docRef = await addDoc(collection(db, 'translationForms'), { ...info });
+            const storageRef = ref(storage, `translationForms/${docRef.id}/${selectedFile.name}`);
+            const uploadTask = uploadBytesResumable(storageRef, selectedFile);
+            
+            uploadTask.on('state_changed',
+              (snapshot) => {
+                // Puedes mostrar el progreso de carga si lo deseas
+              },
+              (error) => {
                 console.log(error);
-            }
-            //console.log("Sending data...");
-            setInfo({...initialData});
-            //console.log(info);
-            setIsVerified(false);
-            toast.info('All set! Our customer service team is working on your request. We will contact you in a few minutes! ', {
-                position: toast.POSITION.TOP_CENTER,
-                autoClose: 15000
-            });
-        } else{
-            toast("Confirmar el captcha");
+              },
+              async () => {
+                const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
+                
+                const data = {
+                  ...info,
+                  file: downloadURL
+                };
+                
+                await setDoc(doc(db, 'translationForms', docRef.id), data);
+                
+                toast.info('¡Listo! Nuestro equipo de atención al cliente está trabajando en tu solicitud. ¡Te contactaremos en unos minutos!', {
+                  position: toast.POSITION.TOP_CENTER,
+                  autoClose: 15000
+                });
+                
+                setInfo(initialData);
+              }
+            );
+          } catch (error) {
+            console.log(error);
+          }
+          
+          setIsVerified(false);
+        } else {
+          toast('Confirma el captcha');
         }
-        
-    };
+      };
+      
 
     const handleVerify = () => {
         setIsVerified(true);
@@ -98,6 +129,7 @@ const TranslationForm = () =>{
       minH={'100vh'}
       align={'center'}
       justify={'center'}
+      mt={2}
       bg={useColorModeValue('gray.50', 'gray.800')}>
       <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
         <Stack align={'center'}>
@@ -456,6 +488,15 @@ const TranslationForm = () =>{
                     COP
                     </Button>
                 </FormControl>  
+                <div>
+                    <input type="file" onChange={handleFileChange} />
+                    {selectedFile && (
+                        <div>
+                            <p>Tipo: {selectedFile.type}</p>
+                        </div>  
+                    )}
+                
+                </div>
           </Stack>
                 <ReCAPTCHA
                     margin= "-2px -2px -10px"
@@ -485,11 +526,7 @@ const TranslationForm = () =>{
       </Stack>
       
     </Flex>
-        <Stack align={'center'}>
-            <Text mt={2}  fontSize={'1xl'} textAlign={'center'}>
-               {t("contact.advertisement")}
-            </Text>  
-        </Stack>
+        
     </form>
     <Footer /> 
     </>
