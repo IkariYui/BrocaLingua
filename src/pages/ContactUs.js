@@ -102,6 +102,7 @@ const db = getFirestore(app);
     minH={'100vh'}
     align={'center'}
     justify={'center'}
+    mt={2}
     bg={useColorModeValue('gray.50', 'gray.800')}>
     <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
       <Stack align={'center'}>

@@ -110,6 +110,7 @@ return (
   minH={'100vh'}
   align={'center'}
   justify={'center'}
+  mt={2}
   bg={useColorModeValue('gray.50', 'gray.800')}>
   <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
     <Stack align={'center'}>
@@ -427,7 +428,7 @@ return (
                         value={info.modality}
                     >
                         <option>{t("interpretationform.online")}</option>
-                        <option>{t("interpretationform.facetofacemod")}</option>
+                        <option>{t("interpretationform.facetofacemodality")}</option>
                     </Select>
                 </FormControl>
             </Box>

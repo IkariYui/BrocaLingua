@@ -175,6 +175,27 @@
         "submit":"Enviar",
         "upload":"Adjuntar archivos"
       },
+
+      "interpretationform":{
+        "tittle":"Formulario de interpretación",
+        "eventstartdate":"Fecha de inicio del evento",
+        "startingtime":"Hora de inicio",
+        "endingtime":"Hora de finalización",
+        "city":"Ciudad",
+        "typeofinterpretation":"Tipo de interpretación",
+        "facetoface":"Consecutiva (presencial)",
+        "phonecall":"Consecutiva (llamada)",
+        "videocall":"Consecutiva (vídeo llamada)",
+        "simultaneous":"Interpretación simultánea",
+        "signlanguage":"Lenguaje de señas",
+        "text":"INTERPRETACIÓN SIMULTÁNEA (De acuerdo con las Normas Internacionales, se requieren 2 traductores para traducciones de más de 1 hora).",
+        "modality":"Modalidad",
+        "online":"Online",
+        "facetofacemodality":"Presencial",
+        "equipment":"¿Se requiere alquiler de equipo?",
+        "commentplaceholder":"Describa el tipo de evento, por ejemplo, el número de participantes que necesitan interpretación: Número de participantes que necesitan interpretación. Número total de asistentes. Duración total."
+      },
+
       "faq":{
         "tittle":"PREGUNTAS FRECUENTES ",
         "documentsentquestion":"¿Debo enviar el documento original?",

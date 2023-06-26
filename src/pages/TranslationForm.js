@@ -85,7 +85,8 @@ const TranslationForm = () =>{
               },
               async () => {
                 const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
-                
+                console.log(downloadURL)
+
                 const data = {
                   ...info,
                   file: downloadURL

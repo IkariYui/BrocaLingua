@@ -8,9 +8,7 @@ const Contact = () => {
       <h1 className="primary-heading">{t("contact.tittle")}</h1>
       <p className="primary-text">{t("contact.text")}</p>
       <div className="contact-advertisement">
-        <p>
-        {t("contact.advertisement")}
-        </p>
+        
       </div>
     </div>
     
