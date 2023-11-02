@@ -84,6 +84,9 @@
       "translationform":{
         "tittle":"Formulario de traducción",
         "yes":"Sí",
+        "cop":"COP",
+        "cad":"CAD",
+        "usd":"USD",
         "no":"No",
         "placeholder":"seleccionar opción",
         "name":"Nombre",
@@ -94,6 +97,7 @@
         "sourcelanguage":"Idioma origen",
         "targetlanguage":"Idioma destino",
         "german":"Alemán",
+        "abkhazian":"Abjasio",
         "arab": "Árabe",
         "bengali":"Bengalí",
         "burmese": "Birmano",

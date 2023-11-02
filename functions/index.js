@@ -130,3 +130,5 @@ exports.sendEmailOnInterpretation = functions.firestore
         }
       });
     });
+
+    

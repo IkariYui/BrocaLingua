@@ -91,8 +91,14 @@ const Navbar = () => {
         </Menu>
       </div>
         <div className="langbt-container">
-          <button className="primary-button languageButtons" onClick={ () => changeLang('en') }>EN</button>
-          <button className="primary-button languageButtons" onClick={ () => changeLang('es') }>ES</button>
+          <button className="languageButtonsEN" onClick={ () => changeLang('en') }>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/1200px-Flag_of_the_United_Kingdom_%281-2%29.svg.png" alt="Bandera de inglés" className="imgButton" />
+            EN
+          </button>
+          <button className=" languageButtonsES" onClick={ () => changeLang('es') }>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Bandera_de_España.svg/1200px-Bandera_de_España.svg.png" alt="Bandera de español" className="imgButton" />
+            ES
+          </button>
         </div>
       </div>
       

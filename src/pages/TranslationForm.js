@@ -18,7 +18,8 @@ import {
     Link,
     Select,
   } from '@chakra-ui/react';
-import ReCAPTCHA from 'react-google-recaptcha';
+  import axios from 'axios';
+  import ReCAPTCHA from 'react-google-recaptcha';
   import { useTranslation } from 'react-i18next';
   import { useState } from 'react';
   import Navbar from "../Components/Navbar";   
@@ -33,7 +34,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
   import {app} from '../credentials';
   import {getFirestore, collection, addDoc, getDocs, doc,
           deleteDoc, getDoc, setDoc,} from 'firebase/firestore';
-     
+
 
 const db = getFirestore(app);
 
@@ -57,66 +58,108 @@ const TranslationForm = () =>{
     const [isVerified, setIsVerified] = useState(false);
     const [selectedFile, setSelectedFile] = useState(null);
     const storage = getStorage();
-
+    const [totalPalabras, setTotalPalabras] = useState(null);
+    
     const handleFileChange = (event) => {
-        const file = event.target.files[0];
-        setSelectedFile(file);
+      const file = event.target.files[0];
+      setSelectedFile(file);
+      // Verificando en consola que el archivo se cargó correctamente
+      console.log(file)
     };
-
+        
     
     const handleInputs = (e)   => {
         const {name, value} = e.target;
         setInfo({...info, [name]:value})
     };
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        if (isVerified) {
-          try {
-            const docRef = await addDoc(collection(db, 'translationForms'), { ...info });
-            const storageRef = ref(storage, `translationForms/${docRef.id}/${selectedFile.name}`);
-            const uploadTask = uploadBytesResumable(storageRef, selectedFile);
-            
-            uploadTask.on('state_changed',
-              (snapshot) => {
-                // Puedes mostrar el progreso de carga si lo deseas
-              },
-              (error) => {
-                console.log(error);
-              },
-              async () => {
-                const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
-                console.log(downloadURL)
 
-                const data = {
-                  ...info,
-                  file: downloadURL
-                };
-                
-                await setDoc(doc(db, 'translationForms', docRef.id), data);
-                
-                toast.info('¡Listo! Nuestro equipo de atención al cliente está trabajando en tu solicitud. ¡Te contactaremos en unos minutos!', {
-                  position: toast.POSITION.TOP_CENTER,
-                  autoClose: 15000
-                });
-                
-                setInfo(initialData);
-              }
-            );
-          } catch (error) {
-            console.log(error);
-          }
-          
-          setIsVerified(false);
-        } else {
-          toast('Confirma el captcha');
-        }
-      };
+    const supportedLangs  = ["English", "Inglés", "Spanish", "Español"];
+    const handleSubmit = async (e) => {
+      e.preventDefault();
       
+      if (isVerified) {
+          // Obtén el valor de "source language" del estado "info"
+          const sourceLanguage = info.sourcelanguage;
+          const targetLanguage = info.targetlanguage;
+          
+          // Verifica si ninguno de los dos lenguajes está en el arreglo de opciones válidas
+    if (!supportedLangs.includes(sourceLanguage) && !supportedLangs.includes(targetLanguage)) {
+      // Si ninguno de los dos lenguajes es una opción válida, no haces nada
+      console.log("No se envía el archivo porque ni el source language ni el target language son opciones válidas.");
+    } else {
+      try {
+/*
+          // Envia los datos al servidor Flask
+        const response = await axios.post('http://localhost:5000/contar_palabras', {
+          sourceLanguage: sourceLanguage,
+          targetLanguage: targetLanguage,
+        });
+*/
+        const docRef = await addDoc(collection(db, 'translationForms'), { ...info });
+        const storageRef = ref(storage, `translationForms/${docRef.id}/${selectedFile.name}`);
+        const uploadTask = uploadBytesResumable(storageRef, selectedFile);
+
+        uploadTask.on('state_changed',
+          (snapshot) => {
+            // Puedes mostrar el progreso de carga si lo deseas
+          },
+          (error) => {
+            console.log(error);
+          },
+
+          async () => {
+            const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
+            console.log(downloadURL);
+
+            const data = {
+              ...info,
+              file: downloadURL
+            };
+
+            await setDoc(doc(db, 'translationForms', docRef.id), data);
+
+            toast.info('¡Listo! Nuestro equipo de atención al cliente está trabajando en tu solicitud. ¡Te contactaremos en unos minutos!', {
+              position: toast.POSITION.TOP_CENTER,
+              autoClose: 15000
+            });
+
+            setInfo(initialData);
+          }
+        );
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    setIsVerified(false);
+  } else {
+    toast('Confirma el captcha');
+  }
+};
 
     const handleVerify = () => {
         setIsVerified(true);
       };
       
+      const handleFileUpload = async () => {
+        const formData = new FormData();
+        formData.append('archivo_pdf', selectedFile);
+        formData.append('source_language', info.sourcelanguage);
+        formData.append('target_language', info.targetlanguage);
+        try {
+          const response = await axios.post('http://ikariyui.pythonanywhere.com/contar_palabras', formData);
+
+          if (response.status === 200) {
+            setTotalPalabras(response.data.total_palabras);
+            console.log("Respuesta del servidor al cargar el archivo PDF:", response.data);
+          } else {
+            console.error('Error en la respuesta del servidor');
+          }
+        } catch (error) {
+          console.error('Error al enviar el archivo al servidor', error);
+        }
+      };
+
     const { colorMode, toggleColorMode } = useColorMode();
     const { t,  i18n } = useTranslation();
     
@@ -195,6 +238,7 @@ const TranslationForm = () =>{
                         value={info.sourcelanguage}
                     >
                         <option>{t("translationform.german")}</option>
+                        <option>{t("translationform.abkhazian")}</option>
                         <option>{t("translationform.arab")}</option>
                         <option>{t("translationform.bengali")}</option>
                         <option>{t("translationform.burmese")}</option>
@@ -230,6 +274,7 @@ const TranslationForm = () =>{
                         <option>{t("translationform.russian")}</option>
                         <option>{t("translationform.swahili")}</option>
                         <option>{t("translationform.swedish")}</option>
+                        <option>{t("translationform.spanish")}</option>
                         <option>{t("translationform.thai")}</option>
                         <option>{t("translationform.turkish")}</option>
                         <option>{t("translationform.ukranian")}</option>
@@ -255,6 +300,7 @@ const TranslationForm = () =>{
                         value={info.targetlanguage}
                     >
                         <option>{t("translationform.german")}</option>
+                        <option>{t("translationform.abkhazian")}</option>
                         <option>{t("translationform.arab")}</option>
                         <option>{t("translationform.bengali")}</option>
                         <option>{t("translationform.burmese")}</option>
@@ -290,6 +336,7 @@ const TranslationForm = () =>{
                         <option>{t("translationform.russian")}</option>
                         <option>{t("translationform.swahili")}</option>
                         <option>{t("translationform.swedish")}</option>
+                        <option>{t("translationform.spanish")}</option>
                         <option>{t("translationform.thai")}</option>
                         <option>{t("translationform.turkish")}</option>
                         <option>{t("translationform.ukranian")}</option>
@@ -483,11 +530,26 @@ const TranslationForm = () =>{
                 _dark={{
                     color: 'black.50',
                 }}>
-                {t("translationform.currency")}
+                Currency
                 </FormLabel>
-                    <Button  size='sm' disabled>
-                    COP
-                    </Button>
+                <Select
+                        id="currency"
+                        name="currency"
+                        autoComplete="currency"
+                        placeholder={t("translationform.placeholder")}
+                        focusBorderColor="brand.400"
+                        shadow="sm"
+                        size="sm"
+                        w="full"
+                        rounded="md"
+                        mb={2}
+                        onChange={handleInputs}
+                        value={info.currency}
+                        >
+                        <option>{t("translationform.cad")}</option>
+                        <option>{t("translationform.cop")}</option>
+                        <option>{t("translationform.usd")}</option>
+                    </Select>
                 </FormControl>  
                 <div>
                     <input type="file" onChange={handleFileChange} />
@@ -496,7 +558,7 @@ const TranslationForm = () =>{
                             <p>Tipo: {selectedFile.type}</p>
                         </div>  
                     )}
-                
+                    
                 </div>
           </Stack>
                 <ReCAPTCHA
@@ -515,11 +577,17 @@ const TranslationForm = () =>{
                 color={'white'}
                 _hover={{
                   bg: 'blue.500',
-                }}>
+                }}
+                onClick={handleFileUpload}
+                >
                 {t("translationform.submit")}
                 
               </Button>
-
+              {totalPalabras !== null && (
+              <div>
+                  <p>Total de palabras en el PDF: {totalPalabras}</p>
+              </div>
+            )}
               
             </Stack>
           </Stack>

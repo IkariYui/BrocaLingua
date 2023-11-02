@@ -46,6 +46,15 @@ nav {
 }
 .langbt-container{
   margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  width: 100px;
+  justify-content: space-between;
+}
+.imgButton{
+  height: 15px;
+  width: 25px;
+  margin-right: 0.3rem;
 }
 .nav-logo-container{
 
@@ -55,12 +64,35 @@ nav {
 .footer-logo{
   width: 30%;
 }
-.languageButtons{
+.languageButtonsEN{
+  background-color: #E6E6E6;
+  outline: none;
+  border: none;
+  border-radius: 5rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  font-weight: 100;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 5px;
-  height: 5px;
+  width: 100px;
+  height: 20px;
+
+}
+.languageButtonsES{
+
+  background-color: #E6E6E6;
+  outline: none;
+  border: none;
+  border-radius: 5rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  font-weight: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 20px;
 }
 .TFnav{
   margin-bottom: 5rem;
